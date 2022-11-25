@@ -1,4 +1,4 @@
-function finishList() {
+export function finishList() {
   const list = document.querySelector('.list');
   const listElem5 = document.querySelector('.special');
   const listElems = [...document.querySelectorAll('li')];
@@ -23,4 +23,3 @@ function finishList() {
   listElem5.before(listElem4);
   listElem5.after(listElem6);
 }
-finishList();
