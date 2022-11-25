@@ -7,7 +7,7 @@ export function finishList() {
   const listElem4 = document.createElement('li');
   const listElem6 = document.createElement('li');
   listElems.map(elem => {
-    elem.classList.add('special');
+    elem.classList.toggle('special');
     return elem;
   });
   listElem8.classList.add('special');
