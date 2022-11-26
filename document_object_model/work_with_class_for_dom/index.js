@@ -12,4 +12,3 @@ export function manageClasses() {
     listElemFour.classList.add('another-class');
   }
 }
-manageClasses();
