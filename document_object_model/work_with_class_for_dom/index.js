@@ -1,5 +1,4 @@
 export function manageClasses() {
-  const list = document.querySelector('.list');
   const listElemOne = document.querySelector('.one');
   listElemOne.classList.add('selected');
   const listElemTwo = document.querySelector('.two');
