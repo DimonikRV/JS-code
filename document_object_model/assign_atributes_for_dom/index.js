@@ -8,4 +8,3 @@ export function finishForm() {
   passwordInput.setAttribute('type', 'password');
   loginformElem.prepend(textInput);
 }
-finishForm();
