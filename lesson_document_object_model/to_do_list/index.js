@@ -1,3 +1,5 @@
+'use strict';
+
 export const tasks = [
   { text: 'Buy milk', done: false },
   { text: 'Pick up Tom from airport', done: false },
