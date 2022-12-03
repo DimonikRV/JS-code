@@ -48,7 +48,7 @@ const changeDone = event => {
   renderTasks(tasks);
 };
 
-listElem.addEventListener('change', changeDone);
+listElem.addEventListener('click', changeDone);
 
 const createButtonElem = document.querySelector('.create-task-btn');
 
