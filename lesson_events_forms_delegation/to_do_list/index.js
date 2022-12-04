@@ -43,8 +43,8 @@ const changeDone = event => {
     if (task.id === checkedEl) {
       task.done = task.done === true ? false : true;
     }
-    listElem.innerHTML = '';
   });
+  listElem.innerHTML = '';
   renderTasks(tasks);
 };
 
