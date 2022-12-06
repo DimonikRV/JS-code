@@ -1,4 +1,4 @@
-const getDiff = (startDate, endDate) => {
+export const getDiff = (startDate, endDate) => {
   const diffDate = Math.abs(startDate - endDate);
   console.log(diffDate);
   const daysData = Math.trunc(diffDate / 86400000);
