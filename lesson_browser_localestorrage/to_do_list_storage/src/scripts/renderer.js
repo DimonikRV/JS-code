@@ -27,7 +27,7 @@ export const renderTasks = () => {
   const tasksList = getItem('tasksList') || [];
   listElem.innerHTML = '';
   const tasksElems = tasksList
-    .sort((a, b) => a.done - b.done || new Date(b.createDate) - new Date(a.createDate))
+    .sort((a, b) => a.done - b.done || new Date(b.done) - new Date(a.done))
     .map(createListItem);
 
   listElem.append(...tasksElems);
