@@ -1,4 +1,4 @@
-const studentsBirthDays = students => {
+export const studentsBirthDays = students => {
   const month = [
     'Jan',
     'Feb',
