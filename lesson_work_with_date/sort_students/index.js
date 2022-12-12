@@ -16,16 +16,13 @@ const studentsBirthDays = students => {
 
   const studentsBday = students.reduce((acc, student) => {
     const monthOfBorn = month[new Date(student.birthDate).getMonth()];
-    console.log(acc[monthOfBorn]);
-    if (acc[monthOfBorn]) {
-      return (acc[monthOfBorn] = [].push(students.name));
-    }
-    return (acc[monthOfBorn] = []);
-  }, {});
 
-  console.log(studentsBday);
+    return {
+      ...acc,
+      [monthOfBorn]: acc[monthOfBorn] ? acc[monthOfBorn].concat(student) : [student],
+    };
+  });
   return studentsBday;
-  // if(month.includes(studentsBday[]))
 };
 // students.map(student => {});
 console.log(
