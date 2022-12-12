@@ -14,15 +14,17 @@ const studentsBirthDays = students => {
     'Dec',
   ];
 
-  const studentsBday = students.reduce((acc, student) => {
-    const monthOfBorn = month[new Date(student.birthDate).getMonth()];
+  const sortStudents = students
+    .sort((a, b) => new Date(a.birthDate).getDate() - new Date(b.birthDate).getDate())
+    .reduce((acc, student) => {
+      const monthOfBorn = month[new Date(student.birthDate).getMonth()];
 
-    return {
-      ...acc,
-      [monthOfBorn]: acc[monthOfBorn] ? acc[monthOfBorn].concat(student) : [student],
-    };
-  });
-  return studentsBday;
+      return {
+        ...acc,
+        [monthOfBorn]: acc[monthOfBorn] ? acc[monthOfBorn].concat(student.name) : [student.name],
+      };
+    }, {});
+  return sortStudents;
 };
 // students.map(student => {});
 console.log(
@@ -30,7 +32,7 @@ console.log(
     { name: 'Tom', birthDate: '01/15/2010' },
     { name: 'Ben', birthDate: '01/17/2008' },
     { name: 'Sam', birthDate: '03/05/2005' },
-    { name: 'Bob', birthDate: '02/05/2007' },
+    { name: 'Bob', birthDate: '02/15/2007' },
     { name: 'Ann', birthDate: '02/08/2007' },
   ]),
 );
