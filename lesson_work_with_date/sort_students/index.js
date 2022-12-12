@@ -1,5 +1,4 @@
 const studentsBirthDays = students => {
-  const sortedObj = {};
   const month = [
     'Jan',
     'Feb',
@@ -17,15 +16,18 @@ const studentsBirthDays = students => {
 
   const studentsBday = students.reduce((acc, student) => {
     const monthOfBorn = month[new Date(student.birthDate).getMonth()];
-    return {
-      ...acc,
-      [monthOfBorn]: [],
-    };
+    console.log(acc[monthOfBorn]);
+    if (acc[monthOfBorn]) {
+      return (acc[monthOfBorn] = [].push(students.name));
+    }
+    return (acc[monthOfBorn] = []);
   }, {});
+
   console.log(studentsBday);
-// if(month.includes(studentsBday[]))
-  
+  return studentsBday;
+  // if(month.includes(studentsBday[]))
 };
+// students.map(student => {});
 console.log(
   studentsBirthDays([
     { name: 'Tom', birthDate: '01/15/2010' },
