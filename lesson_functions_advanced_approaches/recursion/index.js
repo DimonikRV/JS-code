@@ -1,5 +1,5 @@
 export const markFavorites = (tree, favorites) => {
-  const isFavorite = markFavorites.includes(tree.id);
+  const isFavorite = favorites.includes(tree.id);
   return {
     ...tree,
     isFavorite,
