@@ -23,9 +23,9 @@ const shmoment = InitialDate => {
     const oldDate = InitialDate.getSeconds();
     return new Date(InitialDate.setSeconds(oldDate + seconds)).toString();
   };
-  const addMilliseconds = (date, milliseconds) => {
-    const oldDate = date.getMilliseconds();
-    return new Date(date.setMilliseconds(oldDate + milliseconds)).toString();
+  const addMilliseconds = (InitialDate, milliseconds) => {
+    const oldDate = InitialDate.getMilliseconds();
+    return new Date(InitialDate.setMilliseconds(oldDate + milliseconds)).toString();
   };
 
   const addObj = {
