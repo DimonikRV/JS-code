@@ -3,6 +3,6 @@ export const markFavorites = (tree, favorites) => {
   return {
     ...tree,
     isFavorite,
-    nodes: tree.node.map(childNode => markFavorites(childNode, favorites)),
+    nodes: tree.nodes.map(childNode => markFavorites(childNode, favorites)),
   };
 };
