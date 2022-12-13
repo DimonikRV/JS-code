@@ -1,4 +1,8 @@
 const mult = a => b => {
   return a * b;
 };
-console.log(mult(5)(4));
+
+const mult5 = mult(5);
+
+const result = mult5(3);
+console.log(result);
