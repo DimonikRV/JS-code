@@ -1,4 +1,4 @@
-const shmoment = InitialDate => {
+export const shmoment = InitialDate => {
   let result = InitialDate;
 
   const getMethodsNames = {
@@ -23,12 +23,12 @@ const shmoment = InitialDate => {
   const calculator = {
     add(name, value) {
       const currentUnitValue = result[getMethodsNames[name]]();
-      result = new Date(result[setMethodsNames[name](currentUnitValue + value)]);
+      result = new Date(result[setMethodsNames[name]](currentUnitValue + value));
       return this;
     },
     subtract(name, value) {
       const currentUnitValue = result[getMethodsNames[name]]();
-      result = new Date(result[setMethodsNames[name](currentUnitValue - value)]);
+      result = new Date(result[setMethodsNames[name]](currentUnitValue - value));
       return this;
     },
     result() {
@@ -38,11 +38,13 @@ const shmoment = InitialDate => {
   return calculator;
 };
 
-shmoment(new Date(2020, 0, 7, 17, 17))
-  .add('minutes', 2)
-  .add('days', 8)
-  .subtract('years', 1)
-  .result();
+console.log(
+  shmoment(new Date(2020, 0, 7, 17, 17))
+    .add('minutes', 2)
+    .add('days', 8)
+    .subtract('years', 1)
+    .result(),
+);
 
 // const shmoment = InitialDate => {
 //   let newDate = InitialDate;
