@@ -1,5 +1,5 @@
 export const shmoment = InitialDate => {
-  let result = InitialDate;
+  let result = new Date(InitialDate);
 
   const getMethodsNames = {
     years: 'getFullYear',
