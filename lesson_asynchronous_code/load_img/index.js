@@ -6,7 +6,6 @@ export const addImage = (imgSrc, callback) => {
   pageElem.append(imgElem);
 
   const onImageLoaded = () => {
-    const { width, height } = imgElem;
     callback(null, imgElem);
   };
   imgElem.addEventListener('load', onImageLoaded);
