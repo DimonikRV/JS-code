@@ -5,7 +5,7 @@
  * @param {number} period
  * @return {undefined}
  */
-const pinger = (count, period) => {
+export const pinger = (count, period) => {
   const pingTxt = 'Ping';
   console.log(pingTxt);
   let item = count - 1;
@@ -20,5 +20,5 @@ const pinger = (count, period) => {
 };
 
 // examples
-// pinger(5, 100); // makes 5 writes with 100 ms interval
+pinger(5, 100); // makes 5 writes with 100 ms interval
 pinger(7, 150); // makes 7 writes with 1500 ms interval
