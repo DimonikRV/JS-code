@@ -6,7 +6,7 @@ export const asyncCalculator = number =>
     }, 500);
   })
     .then(
-      numbr =>
+      number =>
         new Promise(resolve => {
           setTimeout(() => {
             const squaredNum = number ** 2;
