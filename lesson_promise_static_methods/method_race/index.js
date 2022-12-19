@@ -17,9 +17,11 @@ const request = url =>
       randomDelay,
     );
   });
+const servers = ['https://server.com/us/', 'https://server.com/eu/', 'https://server.com/au/'];
+const getUserASAP = userId => {
+  const usersUrls = servers.map(serverUrl => `${serverUrl}/users/${userId}`);
+  const requests = usersUrls.map(requestUrl => request(requestUrl));
+  Promise.race(requests);
+};
 
-// export const getUserASAP = userId =>
-//   new Promise(resolve => {
-
-//     );
-//   });
+console.log(getUserASAP('id-344'));
