@@ -1,4 +1,4 @@
-const getOneValue = values => {
+export const getOneValue = values => {
   values.filter(notIsNaN => !isNaN(notIsNaN)).reduce((acc, values) => acc + Number(values), 0);
 };
 
