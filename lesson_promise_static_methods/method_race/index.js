@@ -18,10 +18,8 @@ const request = url =>
     );
   });
 const servers = ['https://server.com/us/', 'https://server.com/eu/', 'https://server.com/au/'];
-const getUserASAP = userId => {
+export const getUserASAP = userId => {
   const usersUrls = servers.map(serverUrl => `${serverUrl}/users/${userId}`);
   const requests = usersUrls.map(requestUrl => request(requestUrl));
-  Promise.race(requests);
+  return Promise.race(requests);
 };
-
-console.log(getUserASAP('id-344'));
