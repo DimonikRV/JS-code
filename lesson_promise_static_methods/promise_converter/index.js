@@ -2,7 +2,7 @@
  * ф-ция makePromise должна вернуть промис со значением переданным в ф-цию
  */
 
-const makePromise = value => {
+export const makePromise = value => {
   return new Promise(resolve => resolve(value));
 };
 
