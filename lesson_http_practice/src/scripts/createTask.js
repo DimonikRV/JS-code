@@ -1,4 +1,4 @@
-import { getTaskList, createTaskList } from './gateway.js';
+import { createTaskList } from './gateway.js';
 import { renderTasks } from './renderer.js';
 
 export const onCreateTask = () => {

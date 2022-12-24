@@ -23,3 +23,9 @@ export const updateTask = (UpdatedTaskData, taskId) => {
     body: JSON.stringify(UpdatedTaskData),
   });
 };
+
+export const deleteTask = taskId => {
+  return fetch(`${urlServ}/${taskId}`, {
+    method: 'DELETE',
+  });
+};

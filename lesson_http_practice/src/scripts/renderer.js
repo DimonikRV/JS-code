@@ -17,18 +17,27 @@ const createCheckBox = ({ done, id }) => {
   checkboxElem.setAttribute('type', 'checkbox');
   checkboxElem.dataset.id = id;
   checkboxElem.checked = done;
-  checkboxElem.classList.add('list__item-checkbox');
+  checkboxElem.classList.add('list-item__checkbox');
   return checkboxElem;
 };
 
 const createListItem = ({ text, done, id }) => {
   const listItemElem = document.createElement('li');
-  listItemElem.classList.add('list__item');
+  listItemElem.classList.add('list-item', 'list__list-item');
   const checkboxElem = createCheckBox({ done, id });
   if (done) {
-    listItemElem.classList.add('list__item_done');
+    listItemElem.classList.add('list-item_done');
   }
-  listItemElem.append(checkboxElem, text);
+
+  const textElem = document.createElement('span');
+  textElem.classList.add('list-item__text');
+  textElem.textContent = text;
+
+  const deleteBtnElem = document.createElement('button');
+
+  deleteBtnElem.classList.add('list-item__delete-btn');
+  deleteBtnElem.dataset.id = id;
+  listItemElem.append(checkboxElem, textElem, deleteBtnElem);
 
   return listItemElem;
 };

@@ -2,7 +2,7 @@ import { getTaskList, updateTask } from './gateway.js';
 import { renderTasks } from './renderer.js';
 
 export const onToggleTask = event => {
-  const isCheckbox = event.target.classList.contains('list__item-checkbox');
+  const isCheckbox = event.target.classList.contains('list-item__checkbox');
   if (!isCheckbox) return;
 
   const taskId = event.target.dataset.id;
