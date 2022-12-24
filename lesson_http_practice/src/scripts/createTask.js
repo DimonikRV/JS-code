@@ -11,11 +11,8 @@ export const onCreateTask = () => {
     text,
     done: false,
     createDate: new Date().toISOString(),
-    id: Math.random().toString(),
   };
-  createTaskList(newTasksList)
-    .then(() => getTaskList())
-    .then(tasks => renderTasks(tasks));
+  createTaskList(newTasksList).then(() => renderTasks());
 };
 
 // 1.prepare taskList

@@ -1,4 +1,4 @@
-const urlServ = 'https://63a5c50df8f3f6d4abff64be.mockapi.io/tasklist/';
+const urlServ = 'https://63a6da56f8f3f6d4ab138405.mockapi.io/api/v1/tasks';
 
 export const getTaskList = () => {
   return fetch(urlServ).then(response => response.json());
