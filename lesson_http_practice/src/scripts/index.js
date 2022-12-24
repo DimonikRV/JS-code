@@ -3,9 +3,7 @@ import { renderTasks } from './renderer.js';
 import { getTaskList } from './gateway.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  getTaskList().then(() => {
-    renderTasks();
-  });
+  renderTasks();
   initTodoListHandlers();
 });
 
