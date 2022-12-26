@@ -12,7 +12,7 @@ export function getUserById(userId) {
 export function createUser(userData) {
   return fetch('https://63a6da56f8f3f6d4ab138405.mockapi.io/api/v1/users', {
     method: 'POST',
-    headers: { 'Conrent-Type': 'application/json;charset = UTF-8' },
+    headers: { 'Content-Type': 'application/json;charset = UTF-8' },
     body: JSON.stringify(userData),
   });
 }
@@ -26,7 +26,7 @@ export function deleteUser(userId) {
 export function updateUser(userId, userData) {
   return fetch(`https://63a6da56f8f3f6d4ab138405.mockapi.io/api/v1/users/${userId}`, {
     method: 'PUT',
-    headers: { 'Conrent-Type': 'application/json;charset = UTF-8' },
+    headers: { 'Content-Type': 'application/json;charset = UTF-8' },
     body: JSON.stringify(userData),
   });
 }
