@@ -1,4 +1,4 @@
-function getUsersList() {
+export function getUsersList() {
   return fetch('https://63a6da56f8f3f6d4ab138405.mockapi.io/api/v1/users').then(usersData =>
     usersData.json(),
   );
