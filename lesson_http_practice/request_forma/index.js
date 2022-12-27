@@ -25,7 +25,10 @@ const onSubmit = event => {
     .then(() => getRequest())
     .then(response =>
       JSON.stringify(
-        Object.entries(response).reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {}),
+        response.reduce(
+          (acc, { email, name, password }) => ({ ...acc, email, name, password }),
+          {},
+        ),
       ),
     )
     .then(userData => alert(userData))
@@ -34,5 +37,3 @@ const onSubmit = event => {
 
 formElem.addEventListener('input', onInput);
 formElem.addEventListener('submit', onSubmit);
-
-// response.reduce((acc, [email, name, password]) => ({ ...acc, email, name, password }), {}),
