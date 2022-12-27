@@ -12,8 +12,7 @@ const formElem = document.querySelector('.login-form');
 const registrBtn = document.querySelector('.submit-button');
 
 const onInput = event => {
-  const isValid = formElem.reportValidity();
-  if (isValid) {
+  if (formElem.reportValidity()) {
     registrBtn.removeAttribute('disabled');
   }
 };
