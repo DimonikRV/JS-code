@@ -33,7 +33,7 @@ const onSubmit = event => {
     .then(() => formElem.reset());
 };
 
-formElem.addEventListener('submit', onSubmit);
 formElem.addEventListener('input', onInput);
+formElem.addEventListener('submit', onSubmit);
 
 // response.reduce((acc, [email, name, password]) => ({ ...acc, email, name, password }), {}),
