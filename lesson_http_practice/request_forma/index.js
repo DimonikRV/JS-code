@@ -11,7 +11,7 @@ const postRequest = value =>
 const formElem = document.querySelector('.login-form');
 const registrBtn = document.querySelector('.submit-button');
 
-const onInput = event => {
+const onInput = () => {
   if (formElem.reportValidity()) {
     registrBtn.removeAttribute('disabled');
   }
