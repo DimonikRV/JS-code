@@ -21,7 +21,7 @@ const onInput = event => {
 const onSubmit = event => {
   event.preventDefault();
   const formData = Object.fromEntries(new FormData(event.target));
-  formElem.reset();
+
   postRequest(formData)
     .then(() => getRequest())
     .then(response =>
@@ -29,7 +29,8 @@ const onSubmit = event => {
         Object.entries(response).reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {}),
       ),
     )
-    .then(userData => alert(userData));
+    .then(userData => alert(userData))
+    .then(() => formElem.reset());
 };
 
 formElem.addEventListener('submit', onSubmit);
