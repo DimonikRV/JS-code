@@ -10,21 +10,29 @@ const postRequest = value =>
   });
 const formElem = document.querySelector('.login-form');
 const registrBtn = document.querySelector('.submit-button');
+
 const onInput = event => {
   const isValid = formElem.reportValidity();
   if (isValid) {
-    registrBtn.setAttribute('disabled', false);
+    registrBtn.removeAttribute('disabled');
   }
 };
 
 const onSubmit = event => {
-  const formData = JSON.stringify(Object.fromEntries(new FormData(formElem)));
-
+  event.preventDefault();
+  const formData = Object.fromEntries(new FormData(event.target));
+  formElem.reset();
   postRequest(formData)
     .then(() => getRequest())
-    .then(response => response.json())
-    .then(response => alert(response));
+    .then(response =>
+      JSON.stringify(
+        Object.entries(response).reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {}),
+      ),
+    )
+    .then(userData => alert(userData));
 };
 
-registrBtn.addEventListener('submit', onSubmit);
+formElem.addEventListener('submit', onSubmit);
 formElem.addEventListener('input', onInput);
+
+// response.reduce((acc, [email, name, password]) => ({ ...acc, email, name, password }), {}),
