@@ -1,3 +1,5 @@
+'use strict';
+
 const basedUrl = 'https://63a6da56f8f3f6d4ab138405.mockapi.io/api/v1/users';
 
 const getRequest = () => fetch(basedUrl).then(response => response.json());
@@ -23,16 +25,10 @@ const onSubmit = event => {
 
   postRequest(formData)
     .then(() => getRequest())
-    .then(response =>
-      JSON.stringify(
-        response.reduce(
-          (acc, { email, name, password }) => ({ ...acc, email, name, password }),
-          {},
-        ),
-      ),
-    )
-    .then(userData => alert(userData))
-    .then(() => formElem.reset());
+    .then(({ id, ...rest }) => {
+      alert(JSON.stringify(rest));
+      formElem.reset();
+    });
 };
 
 formElem.addEventListener('input', onInput);
