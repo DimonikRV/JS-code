@@ -11,5 +11,3 @@ export const fetchUser = async userId => {
   const userData = await response.json();
   return userData;
 };
-
-fetchUser('facebook');
