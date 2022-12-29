@@ -1,7 +1,7 @@
-import { getRequest, fetchReposList } from './gateways.js';
-import { renderUser } from './user.js';
-import { renderReposList, cleareList } from './repo.js';
-import { toggleSpiner } from './spiner.js';
+import { getRequest, fetchReposList } from './src/scripts/gateways.js';
+import { renderUser } from './src/scripts/user.js';
+import { renderReposList, cleareList } from './src/scripts/repo.js';
+import { toggleSpiner } from './src/scripts/spiner.js';
 
 const formBtnElem = document.querySelector('.name-form__btn');
 const inputElem = document.querySelector('.name-form__input');
