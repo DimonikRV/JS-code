@@ -8,5 +8,6 @@ export const fetchUser = async userId => {
   if (!response.ok) {
     throw new Error('Failed to get user data');
   }
-  return response.json();
+  const userData = await response.json();
+  return userData;
 };
