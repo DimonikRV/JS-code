@@ -8,7 +8,7 @@ export const getRequest = async userName => {
 };
 
 export const fetchReposList = async url => {
-  const response = fetch(url);
+  const response = await fetch(url);
   if (!response.ok) {
     throw new Error('Failed to load data');
   }
