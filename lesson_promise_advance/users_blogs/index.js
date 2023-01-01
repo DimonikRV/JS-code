@@ -5,7 +5,7 @@
  * @return {promise}
  */
 
-const getUsersBlogs = async users => {
+export const getUsersBlogs = async users => {
   const usersRequests = users.map(async user => {
     const fetchUrl = `https://api.github.com/users/${user}`;
     try {
